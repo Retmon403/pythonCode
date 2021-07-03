@@ -1,0 +1,9 @@
+import requests
+import json
+
+params={'user-agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'}
+uid=0#??
+while True:
+    pones=requests.get('https://api.bilibili.com/x/relation/stat?vmid='+str(uid)+'&jsonp=jsonp',params==params)
+    j_dict=json.loads(pones.text)['data']
+    print(j_dict['follower'])
